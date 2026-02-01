@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be My Valentine? 💖</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ff4d6d, #ffb88c);
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: relative;
+    }
+
+    button {
+      font-size: 1.3rem;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    #yes {
+      background: #51cf66;
+      color: white;
+      box-shadow: 0 8px 20px rgba(81,207,102,0.4);
+    }
+
+    #yes:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(81,207,102,0.55);
+    }
+
+    #no {
+      background: #ff6b6b;
+      color: white;
+      position: absolute;
+      box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+    }
+
+    #no:hover {
+      background: #ff5252;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Hey Jahnaviiii 💕</h1>
+  <p>
+    From the bottom of my heart...<br>
+    <strong>Will you be my Valentine? 🥺❤️
+
+</strong><br> <br>click below!
+  </p>
+
+  <div class="buttons">
+    <button id="yes">Yes! 😍</button>
+    <button id="no">No 😔</button>
+  </div>
+</div>
+
+<script>
+const yesBtn = document.getElementById('yes');
+const noBtn  = document.getElementById('no');
+
+yesBtn.addEventListener('click', () => {
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      background: linear-gradient(135deg, #ff4d6d, #ffb88c);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      font-family:Arial, sans-serif;
+      text-align:center;
+      padding:20px;
+    ">
+      <h1 style="font-size:2.4rem; margin-bottom:20px;">YAYYYYY! 🎉💖</h1>
+      <p style="font-size:0.4rem; max-width:600px; line-height:1.4;">
+        You just made me the happiest person alive right now 🥹❤️<br><br>
+        I love you so much ${"".padEnd(10,"😭💕")}<br>
+        My Valentine promise: I’m committed to you till my last breath—I promise. <br><br>
+Edho vachina coding skills tho chesanu, I hope you like it… <br><br> Enka na  job kosam alochinchaku. Job, love, marriage enka life lo vundavu.. <br>Life ela simple ga lead chesethanu..🙂. 
+
+ <br><br> <br>
+
+Happy Valentine’s Day, my heart! 💕❤️ 
+
+      </p>
+      <div style="font-size:0.4rem; margin-top:30px;">
+        😍💖🥰🌸✨
+      </div>
+    </div>
+  `;
+});
+
+noBtn.addEventListener('mouseover', moveNoButton);
+noBtn.addEventListener('click', moveNoButton);      // also moves on mobile tap
+
+function moveNoButton() {
+  const maxX = window.innerWidth  - noBtn.offsetWidth  - 40;
+  const maxY = window.innerHeight - noBtn.offsetHeight - 40;
+
+  let x = Math.random() * maxX;
+  let y = Math.random() * maxY;
+
+  // try to keep it somewhat visible (not too close to edges)
+  x = Math.max(20, Math.min(x, maxX - 20));
+  y = Math.max(20, Math.min(y, maxY - 80));
+
+  noBtn.style.position = 'absolute';
+  noBtn.style.left = x + 'px';
+  noBtn.style.top  = y + 'px';
+}
+</script>
+
+</body>
+</html>
